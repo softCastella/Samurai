@@ -18,8 +18,9 @@ public class Samurai : MonoBehaviour
 
     private void Awake()
     {
-        // 같은 게임오브젝트에서 Animator 자동으로 가져오기
         animator = GetComponent<Animator>();
+        if (animator == null)
+            Debug.LogError("Samurai: Animator 컴포넌트가 없습니다.");
     }
     /// <summary>
     /// 공격 애니메이션을 재생하고 종료 후 Idle로 복귀합니다.
